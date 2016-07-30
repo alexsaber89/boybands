@@ -6,13 +6,7 @@ var vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
 //Ensure that each item is in a block element (e.g. li, div, p. etc...)
 
 // The number of loops to perform (what if the array changes?)
-var bandsLoopCount = bands.length;
-
-// Keep track of which band we're on in the loop
-var currentBand = console.log(bands[loopTracker]);
-
-// Keep track of which veggie we're on in the loop
-var currentVeggie = console.log(vegetables[loopTracker]);
+var loopCount = bands.length;
 
 // Get a reference to the appropriate DOM element for bands
 var bandElement = document.getElementById("boy-bands");
@@ -21,15 +15,17 @@ var bandElement = document.getElementById("boy-bands");
 var veggieElement = document.getElementById("vegetables");
 
 // Start looping
-for (var loopTracker = 0; loopTracker < bandsLoopCount; loopTracker += 1) {
+for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
+
+// Keep track of which band/veggie we're on in the loop
+var currentBand = bands[loopTracker];
+var currentVeggie = vegetables[loopTracker];
 
   // Add the band names into the correct <div>
-  bandElement.innerHTML += "<p>" + bands[loopTracker] + "</p>";
-  currentBand;
-
+  bandElement.innerHTML += "<p>" + currentBand + "</p>";
+  console.log("The current band is " + currentBand);
 
   // Add the veggie names into the correct <div>
-  veggieElement.innerHTML += "<p>" + vegetables[loopTracker] + "</p>";
-  currentVeggie;
-
+  veggieElement.innerHTML += "<p>" + currentVeggie + "</p>";
+  console.log("The current vegetable is " + currentVeggie);
 }
